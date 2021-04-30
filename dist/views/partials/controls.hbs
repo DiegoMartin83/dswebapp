@@ -1,0 +1,37 @@
+<form action="../user/procesar" method="post">
+  <table border="1" margin="10%">
+    <theader>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Password</th>
+      <th>Accion</th>
+      <th>Accion</th>
+    </theader>
+
+
+    {{#each users}}
+    <tr>
+
+      <td>
+        <input type="checkbox" name="usuario" value={{id}}>
+      </td>
+      <td>{{id}}</td>
+      <td>{{nombre}}</td>
+      <td>{{password}}</td>
+
+      <td> <a class="btn btn-danger" href="/user/delete/{{id}}">Eliminar</a></td>
+      <td> <a class="btn btn-success" href="/user/update/{{id}}">Modificar</a></td>
+
+    </tr>
+
+    {{else}}
+    <tr>
+      <td colspan="4">No hay mas filas</td>
+    </tr>
+    {{/each}}
+
+</form>
+
+</table>
+<button class="btn btn-success">Enviar</button>
+ <a class="btn btn-danger" href="./salir">Salir</a> 
